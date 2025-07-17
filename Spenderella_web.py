@@ -6,7 +6,7 @@ import datetime
 import os
 import random
 
-# Set Tesseract path (Windows only)
+# Set Tesseract path
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # Quotes and flags
