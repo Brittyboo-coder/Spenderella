@@ -1,7 +1,7 @@
 streamlit
 pandas
-pytesseract
-Pillow
+#pytesseract
+#Pillow
 numpy
 python-dateutil
 matplotlib
