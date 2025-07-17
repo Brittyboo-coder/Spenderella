@@ -94,7 +94,7 @@ st.set_page_config(page_title="Spenderella", layout="centered")
 st.title("\U0001F4B8 Spenderella: Your Sassy Financial Frenemy")
 st.subheader(random.choice(quotes))
 
-tabs = st.tabS(["✍ Manual Entry", "📊 View Transactions", "📈 Weekly Breakdown", "🚩 Red Flags"])
+tabs = st.tabs(["✍ Manual Entry", "📊 View Transactions", "📈 Weekly Breakdown", "🚩 Red Flags"])
 
 # OCR Receipt Upload
 #tab = tabs[0]
