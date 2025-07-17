@@ -7,7 +7,7 @@ import os
 import random
 
 # Set Tesseract path
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+#pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # Quotes and flags
 quotes = [
@@ -55,22 +55,22 @@ def add_transaction(date, details, amount, category, gender):
     
     return f"Transaction logged. Spenderella approves (or judges).\n\n{roast}"
 
-def extract_receipt_text(img):
-    if img is None:
-        return ""
-    return pytesseract.image_to_string(img)
+#def extract_receipt_text(img):
+    #if img is None:
+        #return ""
+    #return pytesseract.image_to_string(img)
 
-def process_ocr_text(text, category, gender):
-    today = datetime.date.today()
-    entry = {
-        "Date": today,
-        "Details": text,
-        "Amount": f"${amount:.2f",
-        "Category": category,
-        "Gender": gender
-    }
-    st.session_state.transactions.append(entry)
-    return f"Receipt logged. Spenderella's watching you 👀\n\nSaved text:\n{text}"
+#def process_ocr_text(text, category, gender):
+    #today = datetime.date.today()
+    #entry = {
+        #"Date": today,
+        #"Details": text,
+        #"Amount": f"${amount:.2f",
+        #"Category": category,
+        #"Gender": gender
+    #}
+    #st.session_state.transactions.append(entry)
+    #return f"Receipt logged. Spenderella's watching you 👀\n\nSaved text:\n{text}"
 
 def show_transactions():
     if not st.session_state.transactions:
