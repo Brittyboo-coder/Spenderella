@@ -112,7 +112,7 @@ tabs = st.tabs(["✍ Manual Entry", "📊 View Transactions", "📈 Weekly Break
             #st.success(msg)
 
 # Manual Entry
-tab = tabs[1]
+tab = tabs[0]
 with tab:
     st.header("Manual Transaction Entry")
     date = st.text_input("Date (YYYY-MM-DD)", value=str(datetime.date.today()))
@@ -129,21 +129,21 @@ with tab:
             st.error("Invalid date format. Use YYYY-MM-DD.")
 
 # View Transactions
-tab = tabs[2]
+tab = tabs[1]
 with tab:
     st.header("Transaction Log")
     df = show_transactions()
     st.dataframe(df)
 
 # Weekly Breakdown
-tab = tabs[3]
+tab = tabs[2]
 with tab:
     st.header("Weekly Category Breakdown")
     breakdown = weekly_breakdown()
     st.dataframe(breakdown)
 
 # Red Flag Detection
-tab = tabs[4]
+tab = tabs[3]
 with tab:
     st.header("Financial Red Flags")
     red_df = detect_red_flags()
