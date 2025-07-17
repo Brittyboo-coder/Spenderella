@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import pytesseract
-from PIL import Image
+#import pytesseract
+#from PIL import Image
 import datetime
 import os
 import random
@@ -65,7 +65,7 @@ def process_ocr_text(text, category, gender):
     entry = {
         "Date": today,
         "Details": text,
-        "Amount": "Unknown",
+        "Amount": f"${amount:.2f",
         "Category": category,
         "Gender": gender
     }
@@ -94,22 +94,22 @@ st.set_page_config(page_title="Spenderella", layout="centered")
 st.title("\U0001F4B8 Spenderella: Your Sassy Financial Frenemy")
 st.subheader(random.choice(quotes))
 
-tabs = st.tabs(["📸 OCR Receipt Upload", "✍ Manual Entry", "📊 View Transactions", "📈 Weekly Breakdown", "🚩 Red Flags"])
+tabs = st.tabS(["✍ Manual Entry", "📊 View Transactions", "📈 Weekly Breakdown", "🚩 Red Flags"])
 
 # OCR Receipt Upload
-tab = tabs[0]
-with tab:
-    st.header("OCR Receipt Upload")
-    img = st.file_uploader("Upload your receipt image")
-    if img:
-        img = Image.open(img)
-        text = extract_receipt_text(img)
-        st.text_area("Detected / Editable Text", value=text, key="ocr_text")
-        cat = st.selectbox("Category", ["Food", "Clothing", "Entertainment", "Bills", "Other"], key="ocr_cat")
-        gender = st.radio("Your Gender", ["Female", "Male", "Other"], key="ocr_gen")
-        if st.button("Save Transaction from OCR"):
-            msg = process_ocr_text(st.session_state.ocr_text, cat, gender)
-            st.success(msg)
+#tab = tabs[0]
+#with tab:
+    #st.header("OCR Receipt Upload")
+    #img = st.file_uploader("Upload your receipt image")
+    #if img:
+        #img = Image.open(img)
+        #text = extract_receipt_text(img)
+        #st.text_area("Detected / Editable Text", value=text, key="ocr_text")
+        #cat = st.selectbox("Category", ["Food", "Clothing", "Entertainment", "Bills", "Other"], key="ocr_cat")
+        #gender = st.radio("Your Gender", ["Female", "Male", "Other"], key="ocr_gen")
+        #if st.button("Save Transaction from OCR"):
+            #msg = process_ocr_text(st.session_state.ocr_text, cat, gender)
+            #st.success(msg)
 
 # Manual Entry
 tab = tabs[1]
